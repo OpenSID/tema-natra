@@ -1,5 +1,5 @@
 <?php  if(!defined('BASEPATH')) exit('No direct script access allowed'); ?>
-    
+  	  <link rel="shortcut icon" href="<?php echo base_url()?>desa/logo/<?php echo $desa['logo']?>" />
 	<div class="row" style="margin-bottom:3px;">
       <div class="col-lg-12 col-md-12"><br>
         <div class="header_top">
@@ -48,6 +48,24 @@
                     <img class="tlClogo" src="<?= base_url("$this->theme_folder/$this->theme/images/header.jpg") ?>">
                 </div>
                 <div class="item">
+                    <img class="tlClogo" src="<?= base_url("$this->theme_folder/$this->theme/images/header2.jpeg") ?>">
+                </div>
+            </div>
+            <!-- Carousel controls -->
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>
+            $('.tlClogo').bind('contextmenu', function(e) {
+                return false;
+            }); 
+        </script>
                     <img class="tlClogo" src="<?= base_url("$this->theme_folder/$this->theme/images/header2.jpeg") ?>">
                 </div>
             </div>
