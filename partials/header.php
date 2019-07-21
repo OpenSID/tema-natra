@@ -1,5 +1,5 @@
 <?php  if(!defined('BASEPATH')) exit('No direct script access allowed'); ?>
-    
+    	<link rel="shortcut icon" href="<?php echo base_url()?>desa/logo/<?php echo $desa['logo']?>" />
 	<div class="row" style="margin-bottom:3px;">
       <div class="col-lg-12 col-md-12"><br>
         <div class="header_top">
