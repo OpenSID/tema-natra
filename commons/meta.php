@@ -35,7 +35,7 @@ else echo $single_artikel["judul"]. ' - ' . ucwords($this->setting->sebutan_desa
 <link rel="stylesheet" type="text/css" href="<?= base_url("$this->theme_folder/$this->theme/assets/css/theme.css"); ?>">
 <link rel="stylesheet" type="text/css" href="<?= base_url("$this->theme_folder/$this->theme/assets/css/style.css"); ?>">
 
-<!-- nambah baru lagi 
+<!-- nambah baru lagi
 <link type='text/css' href="<?= base_url()?>Xassets/bootstrap/css/bootstrap.min.css" rel='stylesheet' />-->
 <link type='text/css' href="<?= base_url()?>assets/css/font-awesome.min.css" rel='stylesheet' />
 <link rel="stylesheet" href="<?= base_url()?>assets/css/leaflet.css" />
@@ -56,8 +56,9 @@ else echo $single_artikel["judul"]. ' - ' . ucwords($this->setting->sebutan_desa
 <script language='javascript' src="<?= base_url('assets/bootstrap/js/bootstrap.js'); ?>"></script>
 <script language='javascript' src="<?= base_url('assets/front/js/jquery.cycle2.min.js') ?>"></script>
 <script language='javascript' src="<?= base_url('assets/front/js/jquery.cycle2.carousel.js') ?>"></script>
-<script src="<?= base_url("$this->theme_folder/$this->theme/assets/js/bootstrap.min.js") ?>"></script> 
+<script src="<?= base_url("$this->theme_folder/$this->theme/assets/js/bootstrap.min.js") ?>"></script>
 <script src="<?= base_url()?>assets/js/leaflet.js"></script>
+<script src="<?= base_url()?>assets/js/leaflet-providers.js"></script>
 
 <script src="<?= base_url()?>assets/front/js/layout.js"></script>
 <script src="<?= base_url()?>assets/front/js/jquery.colorbox.js"></script>
