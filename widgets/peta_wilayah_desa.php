@@ -1,44 +1,49 @@
 <!-- widget Peta Wilayah Desa -->
-<div class="">
-    <div class="single_bottom_rightbar">
-        <h2>
+<div class="box box-default box-solid">
+    <div class="box-header">
+        <h3 class="box-title">
         <i class="fa fa-map-marker"></i>
-        <?="Wilayah ".ucwords($this->setting->sebutan_desa)?></h2>
+        <?="Wilayah ".ucwords($this->setting->sebutan_desa)?></h3>
     </div>
-    <div class="single_bottom_rightbar">
+    <div class="box-body">
         <div id="map_wilayah" style="height:200px;"></div>
-        <a href="https://www.openstreetmap.org/#map=15/<?=$data_config['lat']."/".$data_config['lng']?>" class="btn btn-primary btn-block" target="_blank">Buka Peta</a>
+        <a href="https://www.openstreetmap.org/#map=15/<?=$data_config['lat']."/".$data_config['lng']?>">Buka peta</a>
     </div>
 </div>
 
 <script>
-//Jika posisi kantor desa belum ada, maka posisi peta akan menampilkan seluruh Indonesia
-<?php if (!empty($data_config['lat']) && !empty($data_config['lng'])): ?>
+  //Jika posisi kantor desa belum ada, maka posisi peta akan menampilkan seluruh Indonesia
+  <?php if (!empty($data_config['lat']) && !empty($data_config['lng'])): ?>
     var posisi = [<?=$data_config['lat'].",".$data_config['lng']?>];
     var zoom = <?=$data_config['zoom'] ?: 10?>;
-<?php else: ?>
+  <?php else: ?>
     var posisi = [-1.0546279422758742,116.71875000000001];
     var zoom = 10;
-<?php endif; ?>
-    //Style polygon
-    var style_polygon = {
-        stroke: true,
-        color: '#555555',
-        opacity: 0.5,
-        weight: 2,
-        fillColor: '#8888dd',
-        fillOpacity: 0.05
-    };
-    var wilayah_desa = L.map('map_wilayah').setView(posisi, zoom);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-        id: 'wilayah_desa'
-    }).addTo(wilayah_desa);
-//Jika wilayah belum ada, maka posisi peta akan menampilkan seluruh Indonesia
-<?php if (!empty($data_config['path'])): ?>
+  <?php endif; ?>
+  //Style polygon
+  var style_polygon = {
+    stroke: true,
+    color: '#FF0000',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#8888dd',
+    fillOpacity: 0.5
+  };
+  var wilayah_desa = L.map('map_wilayah').setView(posisi, zoom);
+
+  //Menampilkan BaseLayers Peta
+  var defaultLayer = L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(wilayah_desa);
+
+  var baseLayers = {
+    'OpenStreetMap': defaultLayer,
+    'Mapbox Streets Satellite' : L.tileLayer('https://api.mapbox.com/v4/mapbox.streets-satellite/{z}/{x}/{y}@2x.png?access_token=<?=$this->setting->google_key?>', {attribution: '<a href="https://www.mapbox.com/about/maps">© Mapbox</a> <a href="https://openstreetmap.org/copyright">© OpenStreetMap</a>'}),
+  };
+
+  L.control.layers(baseLayers, null, {position: 'topright', collapsed: true}).addTo(wilayah_desa);
+
+  <?php if (!empty($data_config['path'])): ?>
     var polygon_desa = <?= $data_config['path']; ?>;
     var kantor_desa = L.polygon(polygon_desa, style_polygon).bindTooltip("Wilayah Desa").addTo(wilayah_desa);
     wilayah_desa.fitBounds(kantor_desa.getBounds());
-<?php endif; ?>
+  <?php endif; ?>
 </script>

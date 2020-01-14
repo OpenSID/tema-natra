@@ -9,10 +9,12 @@
 	}
 </style>
 <!-- widget Peta Lokasi Kantor Desa -->
-<div class="single_bottom_rightbar">
-    <h2 class="box-title">
+<div class="box box-default box-solid">
+  <div class="box-header">
+    <h3 class="box-title">
     <i class="fa fa-map-marker"></i>
-    <?="Lokasi Kantor ".ucwords($this->setting->sebutan_desa)?></h2>
+    <?="Lokasi Kantor ".ucwords($this->setting->sebutan_desa)?></h3>
+  </div>
   <div class="box-body">
     <div id="map_canvas" style="height:200px;"></div>
     <button class="btn btn-success btn-block"><a href="https://www.openstreetmap.org/#map=15/<?=$data_config['lat']."/".$data_config['lng']?>" style="color:#fff;" target="_blank">Buka Peta</a></button>
@@ -26,31 +28,31 @@
 				<table width="100%">
 					<tr style="border-bottom: 1px solid #ddd;">
 						<td class="label-info-desa" width="25%" height="30px">Alamat</td>
-						<td class="isi-info-desa" width="70%"><?= $desa['alamat_kantor']?></td>
+						<td class="isi-info-desa" width="70%"><?php echo $desa['alamat_kantor']?></td>
 					</tr>
 					<tr style="border-bottom: 1px solid #ddd;">
-						<td class="label-info-desa" width="25%" height="30px"><?= ucwords($this->setting->sebutan_desa)." "?></td>
-						<td class="isi-info-desa" width="70%" height="30px"><?= $desa['nama_desa']?></td>
+						<td class="label-info-desa" width="25%" height="30px"><?php echo ucwords($this->setting->sebutan_desa)." "?></td>
+						<td class="isi-info-desa" width="70%" height="30px"><?php echo $desa['nama_desa']?></td>
 					</tr>
 					<tr style="border-bottom: 1px solid #ddd;">
-						<td class="label-info-desa" width="25%" height="30px"><?= ucwords($this->setting->sebutan_kecamatan)?></td>
-						<td class="isi-info-desa" width="70%" height="30px"><?= $desa['nama_kecamatan']?></td>
+						<td class="label-info-desa" width="25%" height="30px"><?php echo ucwords($this->setting->sebutan_kecamatan)?></td>
+						<td class="isi-info-desa" width="70%" height="30px"><?php echo $desa['nama_kecamatan']?></td>
 					</tr>
 					<tr style="border-bottom: 1px solid #ddd;">
-						<td class="label-info-desa" width="25%" height="30px"><?= ucwords($this->setting->sebutan_kabupaten)?></td>
-						<td class="isi-info-desa" width="70%" height="30px"><?= $desa['nama_kabupaten']?></td>
+						<td class="label-info-desa" width="25%" height="30px"><?php echo ucwords($this->setting->sebutan_kabupaten)?></td>
+						<td class="isi-info-desa" width="70%" height="30px"><?php echo $desa['nama_kabupaten']?></td>
 					</tr>
 					<tr style="border-bottom: 1px solid #ddd;">
 						<td class="label-info-desa" width="25%" height="30px">Kodepos</td>
-						<td class="isi-info-desa" width="70%" height="30px"><?= $desa['kode_pos']?></td>
+						<td class="isi-info-desa" width="70%" height="30px"><?php echo $desa['kode_pos']?></td>
 					</tr>
 					<tr style="border-bottom: 1px solid #ddd;">
 						<td class="label-info-desa" width="25%" height="30px">Telepon</td>
-						<td class="isi-info-desa" width="70%" height="30px"><?= $desa['telepon']?></td>
+						<td class="isi-info-desa" width="70%" height="30px"><?php echo $desa['telepon']?></td>
 					</tr>
 					<tr>
 						<td class="label-info-desa" width="25%" height="40px">Email</td>
-						<td class="isi-info-desa" width="70%" height="40px"><?= $desa['email_desa']?></td>
+						<td class="isi-info-desa" width="70%" height="40px"><?php echo $desa['email_desa']?></td>
 					</tr>
 				</table>
 			</div>
@@ -59,23 +61,30 @@
 </div>
 
 <script>
-//Jika posisi kantor desa belum ada, maka posisi peta akan menampilkan seluruh Indonesia
-<?php if (!empty($data_config['lat']) && !empty($data_config['lng'])): ?>
+	//Jika posisi kantor desa belum ada, maka posisi peta akan menampilkan seluruh Indonesia
+	<?php if (!empty($data_config['lat']) && !empty($data_config['lng'])): ?>
     var posisi = [<?=$data_config['lat'].",".$data_config['lng']?>];
     var zoom = <?=$data_config['zoom'] ?: 10?>;
-<?php else: ?>
+	<?php else: ?>
     var posisi = [-1.0546279422758742,116.71875000000001];
     var zoom = 10;
-<?php endif; ?>
+	<?php endif; ?>
 
-    var lokasi_kantor = L.map('map_canvas').setView(posisi, zoom);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-        id: 'mapbox.streets'
-    }).addTo(lokasi_kantor);
-//Jika posisi kantor desa belum ada, maka posisi peta akan menampilkan seluruh Indonesia
-<?php if (!empty($data_config['lat']) && !empty($data_config['lng'])): ?>
+	var lokasi_kantor = L.map('map_canvas').setView(posisi, zoom);
+
+	//Menampilkan BaseLayers Peta
+	var defaultLayer = L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(lokasi_kantor);
+
+	var baseLayers = {
+		'OpenStreetMap': defaultLayer,
+		'Mapbox Streets Satellite' : L.tileLayer('https://api.mapbox.com/v4/mapbox.streets-satellite/{z}/{x}/{y}@2x.png?access_token=<?=$this->setting->google_key?>', {attribution: '<a href="https://www.mapbox.com/about/maps">© Mapbox</a> <a href="https://openstreetmap.org/copyright">© OpenStreetMap</a>'}),
+	};
+
+	L.control.layers(baseLayers, null, {position: 'topright', collapsed: true}).addTo(lokasi_kantor);
+
+	//Jika posisi kantor desa belum ada, maka posisi peta akan menampilkan seluruh Indonesia
+	<?php if (!empty($data_config['lat']) && !empty($data_config['lng'])): ?>
     var kantor_desa = L.marker(posisi).addTo(lokasi_kantor);
-<?php endif; ?>
+	<?php endif; ?>
 </script>
+<script src="<?= base_url()?>assets/js/leaflet-providers.js"></script>
