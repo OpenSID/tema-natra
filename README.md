@@ -9,10 +9,10 @@ Tema ini awalnya dibuat oleh Ariandi Ryan Kahfi, dan merupakan pemenang Sayembar
 ******************************************************
 Silakan edit file commons/meta.php
 
-baris ke 15
+baris ke 19
 	<meta property="fb:app_id" content="147912828718">
 
-baris ke 101
+baris ke 118
 	<script async defer crossorigin="anonymous"
 	src="https://connect.facebook.net/id_ID/sdk.js#
 	xfbml=1&version=v3.2&appId=147912828718&autoLog
