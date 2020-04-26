@@ -8,18 +8,16 @@
 if($w_cos):
 	foreach($w_cos as $data):
 		$widget = trim($data['isi']);
-		if(($data["jenis_widget"] == 1) OR ($data["jenis_widget"] == 2)):
-			$cek = explode('/', $widget);
-			if($cek[1] !== NULL):
-				$cek = $cek[1];
-			else:
-				$cek = $cek[0];
-			endif;
-			include($this->theme_folder.'/'.$this->theme.'/widgets/'.$cek);
+		if($data["jenis_widget"] == 1):
+			include("donjo-app/views/widgets/".$widget);
+		elseif($data["jenis_widget"] == 2):
+			include($data['isi']);
 		else: ?>
-			<div class=\"single_bottom_rightbar\">
-			    <h2><i class='fa fa-folder-open'></i> <?=$data["judul"]?></h2>
-				<div class=\"box-body\">
+			<div class="box box-primary box-solid">
+				<div class="box-header">
+					<h3 class="box-title"><?=$data["judul"]?></h3>
+				</div>
+				<div class="box-body">
 					<?=html_entity_decode($data['isi'])?>
 				</div>
 			</div>
