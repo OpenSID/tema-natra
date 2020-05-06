@@ -166,18 +166,12 @@
 			<?php if(config_item('covid_negara')) : ?>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="progress-group">
-					<span>Terakhir diperbarui :</span>
-					<span class="last_update"><i class="fa fa-spinner fa-pulse"></i></span>
-				</div>
-			</div>
-			<?php endif ?>
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<div class="progress-group">
 					<a href="https://kawalcorona.com/" rel="noopener noreferrer" target="_blank">
-						<button type="button" class="btn btn-success btn-block">Sumber kawalcorona.com</button>
+						<button type="button" class="btn btn-success btn-block">Terakhir diperbarui : <span class="last_update"><i class="fa fa-spinner fa-pulse"></i></span></button>
 					</a>
 				</div>
 			</div>
+			<?php endif ?>
 		</div>
 	</div>
 </div>
