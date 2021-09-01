@@ -1,17 +1,6 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-
-<?php if (IS_PREMIUM): ?>
-
-	$hari_ini = $statistik_pengunjung['hari_ini'];
-	$kemarin = $statistik_pengunjung['kemarin'];
-	$total = $statistik_pengunjung['total'];
-	$os = $statistik_pengunjung['os'];
-	$ip_address = $statistik_pengunjung['ip_address'];
-	$browser = statistik_pengunjung['browser'];
-
-<?php else: ?>
-
 <?php
+
+	defined('BASEPATH') or exit('No direct script access allowed');
 
 	$CI =& get_instance();
 	$CI->load->library('user_agent');
@@ -25,7 +14,7 @@
 	} else {
 		$browser = 'Tidak ditemukan';
 	}
-	
+
 	$ip = $CI->input->ip_address();
 	$os = $CI->agent->platform();
 
@@ -62,12 +51,11 @@
 	$rs = $this->db->query('SELECT SUM(Jumlah) as Total FROM sys_traffic');
 	$visitor = $rs->row(0);
 	$total = $visitor->Total;
-	
+
 	$hari_ini = $today;
 	$kemarin = $yesterday;
 	$ip_address = $ip;
-
-endif; ?>
+?>
 
 <div class="archive_style_1">
 	<div class="single_bottom_rightbar">
