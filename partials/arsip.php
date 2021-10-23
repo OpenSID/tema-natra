@@ -4,7 +4,7 @@
 	<div style="margin-top:0px;">
 		<?php if (!empty($teks_berjalan)): ?>
 			<marquee onmouseover="this.stop()" onmouseout="this.start()">
-				<?php $this->load->view($folder_themes.'/layouts/teks_berjalan.php'); ?>
+				<?php $this->load->view("$folder_themes/layouts/teks_berjalan"); ?>
 			</marquee>
 		<?php endif; ?>
 	</div>
