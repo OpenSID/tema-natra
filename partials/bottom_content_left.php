@@ -107,26 +107,5 @@
     </div>
     <?php endif; ?>
 </div>
-<?php if ($paging->num_rows > $paging->per_page): ?>
-    <div class="pagination_area text-center">
-        <div>Halaman <?= $p ?> dari <?= $paging->end_link ?></div>
-        <ul class="pagination">
-            <?php if ($paging->start_link): ?>
-            <li><a href="<?= site_url($paging_page."/$paging->start_link" . $paging->suffix) ?>" title="Halaman Pertama"><i class="fa fa-fast-backward"></i>&nbsp;</a></li>
-            <?php endif; ?>
-            <?php foreach ($pages as $i): ?>
-            <li <?= ($p == $i) ? 'class="active"' : "" ?>>
-                <a href="<?= site_url($paging_page."/$i" . $paging->suffix) ?>" title="Halaman <?= $i ?>"><?= $i ?></a>
-            </li>
-            <?php endforeach; ?>
-            <?php if ($i != $paging->end_link): ?>
-            <li class='disabled'>
-                <a>...</a>
-            </li>
-            <?php endif; ?>
-            <?php if ($paging->end_link): ?>
-            <li><a href="<?= site_url($paging_page."/$paging->end_link" . $paging->suffix) ?>" title="Halaman Terakhir"><i class="fa fa-fast-forward"></i>&nbsp;</a></li>
-            <?php endif; ?>
-        </ul>
-    </div>
-<?php endif; ?>
+
+<?php $this->load->view("$folder_themes/commons/page"); ?>
