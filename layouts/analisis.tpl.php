@@ -21,7 +21,7 @@
 				<div class="content_middle"></div>
 				<div class="content_bottom">
 					<div class="col-lg-9 col-md-9">
-						<div class="content_bottom_left">
+						<div class="content_left">
 							<div class="single_page_area">
 								<?php if ($list_jawab) : ?>
 									<div class='box'>
