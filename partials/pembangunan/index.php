@@ -43,7 +43,7 @@
                     </tr>
 									</tbody>
 								</table>
-								<a href="<?= site_url("pembangunan/detail/$data->id"); ?>" class="btn btn-primary">Selengkapnya</a>
+								<a href="<?= site_url("pembangunan/$data->slug"); ?>" class="btn btn-primary">Selengkapnya</a>
 							</div>
 						</div>
 					</div>
