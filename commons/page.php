@@ -11,7 +11,7 @@
                 <li><a href="<?= site_url("$paging_page/$paging->prev" . $paging->suffix); ?>" title="Halaman Sebelumnya"><i class="fa fa-backward"></i>&nbsp;</a></li>
             <?php endif; ?>
             <?php for ($i=$paging->start_link; $i<=$paging->end_link; $i++): ?>
-                <li class="<?php ($paging->page != $i) or print('active');?>"><a href="<?=site_url("$paging_page/$i" . $paging->suffix); ?>" title="<?= 'Halaman ' . $i ?>"><?= $i ?></a></li>
+                <li class="<?php ($paging->page != $i) or print('active'); ?>"><a href="<?=site_url("$paging_page/$i" . $paging->suffix); ?>" title="<?= 'Halaman ' . $i ?>"><?= $i ?></a></li>
             <?php endfor; ?>
             <?php if ($paging->next): ?>
                 <li><a href="<?= site_url("$paging_page/$paging->next" . $paging->suffix); ?>" title="Halaman Selanjutnya"><i class="fa fa-forward"></i>&nbsp;</a></li>

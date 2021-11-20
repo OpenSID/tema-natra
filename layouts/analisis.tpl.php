@@ -34,7 +34,7 @@
 										</div>
 										<?php if ($list_indikator): ?>
 											<?php if (count($master_indikator) > 1) : ?>
-												<form action="<?=site_url('data_analisis');?>" method="get">
+												<form action="<?=site_url('data_analisis'); ?>" method="get">
 													<div class="row" style="margin-bottom: 20px;">
 														<label style="padding-top: 5px;" class="col-sm-1 control-label" >Analisis: </label>
 														<div class="col-sm-6">

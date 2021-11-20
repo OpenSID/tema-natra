@@ -15,7 +15,7 @@
 		<div id="printableArea">
 			<h4 class="catg_titile" style="font-family: Oswald"><font color="#FFFFFF"><?= $single_artikel["judul"]?></font></h4>
 			<div class="post_commentbox">
-				<span class="meta_date"><?= tgl_indo2($single_artikel['tgl_upload']);?>&nbsp;
+				<span class="meta_date"><?= tgl_indo2($single_artikel['tgl_upload']); ?>&nbsp;
 					<i class="fa fa-user"></i><?= $single_artikel['owner']?>&nbsp;
 					<i class="fa fa-eye"></i><?= hit($single_artikel['hit']) ?> Dibaca&nbsp;
 					<?php if (trim($single_artikel['kategori']) != '') : ?>

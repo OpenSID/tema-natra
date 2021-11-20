@@ -26,7 +26,7 @@
 				<div class="col-lg-9 col-md-9">
 					<div class="content_left">
 						<?php if ($halaman_statis == 'informasi_publik'): ?>
-							<?php $this->load->view(Web_Controller::fallback_default($this->theme, '/partials/informasi_publik.php'));?>
+							<?php $this->load->view("$folder_themes/partials/informasi_publik"); ?>
 						<?php else: ?>
 							<?php $this->load->view($halaman_statis); ?>
 						<?php endif; ?>
