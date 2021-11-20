@@ -56,10 +56,10 @@
             </ol>   
             <div class="carousel-inner">
                 <div class="item active">
-                    <img class="tlClogo" src="<?= base_url("$this->theme_folder/$this->theme/images/bg_header.jpg") ?>">
+                    <img class="tlClogo" src="<?= base_url("$folder_themes/images/bg_header.jpg") ?>">
                 </div>
                 <div class="item">
-                    <img class="tlClogo" src="<?= base_url("$this->theme_folder/$this->theme/images/bg_header.jpg") ?>">
+                    <img class="tlClogo" src="<?= base_url("$folder_themes/images/bg_header.jpg") ?>">
                 </div>
             </div>
 

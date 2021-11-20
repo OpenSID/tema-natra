@@ -25,13 +25,13 @@
 
 <?php	$favicon = LOKASI_LOGO_DESA . 'favicon.ico'; ?>
 <link rel="shortcut icon" href="<?= base_url(is_file($favicon) ? $favicon : 'favicon.ico') ?>"/>
-<link rel="stylesheet" href="<?= base_url("$this->theme_folder/$this->theme/assets/css/bootstrap.min.css"); ?>">
-<link rel="stylesheet" href="<?= base_url("$this->theme_folder/$this->theme/assets/css/font-awesome.min.css"); ?>">
-<link rel="stylesheet" href="<?= base_url("$this->theme_folder/$this->theme/assets/css/animate.css"); ?>">
-<link rel="stylesheet" href="<?= base_url("$this->theme_folder/$this->theme/assets/css/slick.css"); ?>">
-<link rel="stylesheet" href="<?= base_url("$this->theme_folder/$this->theme/assets/css/theme.min.css"); ?>">
-<link rel="stylesheet" href="<?= base_url("$this->theme_folder/$this->theme/assets/css/style.min.css"); ?>">
-<link rel="stylesheet" href="<?= base_url("$this->theme_folder/$this->theme/assets/css/custom.css"); ?>">
+<link rel="stylesheet" href="<?= base_url("$folder_themes/assets/css/bootstrap.min.css"); ?>">
+<link rel="stylesheet" href="<?= base_url("$folder_themes/assets/css/font-awesome.min.css"); ?>">
+<link rel="stylesheet" href="<?= base_url("$folder_themes/assets/css/animate.css"); ?>">
+<link rel="stylesheet" href="<?= base_url("$folder_themes/assets/css/slick.css"); ?>">
+<link rel="stylesheet" href="<?= base_url("$folder_themes/assets/css/theme.min.css"); ?>">
+<link rel="stylesheet" href="<?= base_url("$folder_themes/assets/css/style.min.css"); ?>">
+<link rel="stylesheet" href="<?= base_url("$folder_themes/assets/css/custom.css"); ?>">
 <link rel='stylesheet' href="<?= base_url('assets/css/font-awesome.min.css'); ?>"/>
 <link rel="stylesheet" href="<?= base_url('assets/css/leaflet.css'); ?>"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
@@ -53,7 +53,7 @@
 <script language='javascript' src="<?= base_url('assets/front/js/jquery.min.js'); ?>"></script>
 <script language='javascript' src="<?= base_url('assets/front/js/jquery.cycle2.min.js'); ?>"></script>
 <script language='javascript' src="<?= base_url('assets/front/js/jquery.cycle2.carousel.js'); ?>"></script>
-<script src="<?= base_url("$this->theme_folder/$this->theme/assets/js/bootstrap.min.js"); ?>"></script>
+<script src="<?= base_url("$folder_themes/assets/js/bootstrap.min.js"); ?>"></script>
 <script src="<?= base_url('assets/js/leaflet.js'); ?>"></script>
 <script src="<?= base_url('assets/front/js/layout.js'); ?>"></script>
 <script src="<?= base_url('assets/front/js/jquery.colorbox.js'); ?>"></script>
@@ -118,7 +118,7 @@
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v3.2&appId=147912828718&autoLogAppEvents=1"></script>
 
 <!--[if lt IE 9]>
-<script src="<?= base_url("$this->theme_folder/$this->theme/assets/js/html5shiv.min.js"); ?>"></script>
-<script src="<?= base_url("$this->theme_folder/$this->theme/assets/js/respond.min.js"); ?>"></script>
+<script src="<?= base_url("$folder_themes/assets/js/html5shiv.min.js"); ?>"></script>
+<script src="<?= base_url("$folder_themes/assets/js/respond.min.js"); ?>"></script>
 <![endif]-->
 <?php $this->load->view('head_tags_front') ?>
