@@ -1,3 +1,5 @@
+<?php defined('BASEPATH') || exit('No direct script access allowed'); ?>
+
 <?php if ($paging->num_rows > $paging->per_page): ?>
     <div class="pagination_area text-center">
         <div>Halaman <?= $paging->page ?> dari <?= $paging->end_link ?></div>

@@ -1,4 +1,5 @@
-<?php  if(!defined('BASEPATH')) exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') || exit('No direct script access allowed'); ?>
+
 <div class="content_left" style="margin-bottom:10px;">
     <div class="archive_style_1">
         <div style="margin-top:10px;">

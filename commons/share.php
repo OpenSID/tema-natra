@@ -1,3 +1,5 @@
+<?php defined('BASEPATH') || exit('No direct script access allowed'); ?>
+
 <div class="btn-group" role="group" aria-label="Bagikan ke teman anda" style="clear:both;">
   <a name="fb_share" href="http://www.facebook.com/sharer.php?u=<?= $link; ?>" onclick='window.open(this.href,"popupwindow","status=0,height=500,width=500,resizable=0,top=50,left=100");return false;' rel='noopener noreferrer' target='_blank' title='Facebook'><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-facebook-square fa-2x"></i></button></a>
   <a href="http://twitter.com/share?source=sharethiscom&text=<?= $judul; ?>%0A&url=<?= $link .'&via=ariandii'?>" class="twitter-share-button" onclick='window.open(this.href,"popupwindow","status=0,height=500,width=500,resizable=0,top=50,left=100");return false;' rel='noopener noreferrer' target='_blank' title='Twitter'><button type="button" class="btn btn-info btn-sm"><i class="fa fa-twitter fa-2x"></i></button></a>

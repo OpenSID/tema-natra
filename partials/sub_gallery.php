@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') || exit('No direct script access allowed'); ?>
 
 <div class="single_category wow fadeInDown">
 	<h2> <span class="bold_line"><span></span></span> <span class="solid_line"></span> <span class="title_text">Album Galeri <?= $parrent['nama']; ?></span></h2>

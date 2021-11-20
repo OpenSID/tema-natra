@@ -1,4 +1,4 @@
-<!-- widget Kategori-->
+<?php defined('BASEPATH') || exit('No direct script access allowed'); ?>
 
 <div class="single_bottom_rightbar">
 	<h2> Kategori</h2>

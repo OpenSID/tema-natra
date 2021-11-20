@@ -1,4 +1,5 @@
-<!-- widget Galeri-->
+<?php defined('BASEPATH') || exit('No direct script access allowed'); ?>
+
 <div class="single_bottom_rightbar">
 	<h2><i class="fa fa-book"></i> <a href="<?= site_url();?>first/gallery">Galeri Foto</a></h2>
 	<div class="latest_slider">
