@@ -32,8 +32,8 @@
                                     <img src="<?= AmbilFotoArtikel($headline['gambar'],'sedang') ?>" width="300" class="img-fluid img-thumbnail hidden-sm hidden-xs" style="float:left; margin:0 8px 4px 0;" />
                                     <img src="<?= AmbilFotoArtikel($headline['gambar'],'sedang') ?>" width="100%" class="img-fluid img-thumbnail hidden-lg hidden-md" style="float:left; margin:0 8px 4px 0;" />
                                     <?php else: ?>
-                                    <img src="<?= base_url("$folder_themes/images/noimage.png") ?>" width="300px" class="img-fluid img-thumbnail hidden-sm hidden-xs" style="float:left; margin:0 8px 4px 0;"/>
-                                    <img src="<?= base_url("$folder_themes/images/noimage.png") ?>" width="100%" class="img-fluid img-thumbnail hidden-lg hidden-md" style="float:left; margin:0 8px 4px 0;"/>
+                                    <img src="<?= base_url("$this->theme_folder/$this->theme/images/noimage.png") ?>" width="300px" class="img-fluid img-thumbnail hidden-sm hidden-xs" style="float:left; margin:0 8px 4px 0;"/>
+                                    <img src="<?= base_url("$this->theme_folder/$this->theme/images/noimage.png") ?>" width="100%" class="img-fluid img-thumbnail hidden-lg hidden-md" style="float:left; margin:0 8px 4px 0;"/>
                                     <?php endif; ?>
                                     <?php endif; ?>
                                     </a>
@@ -82,8 +82,8 @@
                                 <img src="<?= AmbilFotoArtikel($data['gambar'],'sedang') ?>" width="300" class="img-fluid img-thumbnail hidden-sm hidden-xs" style="float:left; margin:0 8px 4px 0;" alt="<?= $data["judul"] ?>"/>
                                 <img src="<?= AmbilFotoArtikel($data['gambar'],'sedang') ?>" width="100%" class="img-fluid img-thumbnail hidden-lg hidden-md" style="float:left; margin:0 8px 4px 0;" alt="<?= $data["judul"] ?>"/>
                                 <?php else: ?>
-                                <img src="<?= base_url("$folder_themes/images/noimage.png") ?>" width="300px" class="img-fluid img-thumbnail hidden-sm hidden-xs" style="float:left; margin:0 8px 4px 0;" alt="<?= $data["judul"] ?>" />
-                                <img src="<?= base_url("$folder_themes/images/noimage.png") ?>" width="100%" class="img-fluid img-thumbnail hidden-lg hidden-md" style="float:left; margin:0 8px 4px 0;" alt="<?= $data["judul"] ?>" />
+                                <img src="<?= base_url("$this->theme_folder/$this->theme/images/noimage.png") ?>" width="300px" class="img-fluid img-thumbnail hidden-sm hidden-xs" style="float:left; margin:0 8px 4px 0;" alt="<?= $data["judul"] ?>" />
+                                <img src="<?= base_url("$this->theme_folder/$this->theme/images/noimage.png") ?>" width="100%" class="img-fluid img-thumbnail hidden-lg hidden-md" style="float:left; margin:0 8px 4px 0;" alt="<?= $data["judul"] ?>" />
                                 <?php endif;?>
                                 </a>
                                 <div style="text-align: justify;" class="hidden-sm hidden-xs">
