@@ -1,4 +1,4 @@
-Catatan Rilis Tema Natra v22.02-pasca, sbb:
+Catatan Rilis Tema Natra v22.04, sbb:
 
 1. Halaman pengaduan dan tambahkan captcha. **[rilis]**
 2. Hapus fuction fallback_default() yang sudah tidak digunakan. **[rilis]**
