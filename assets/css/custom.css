@@ -220,3 +220,27 @@
 	opacity: 0.6;
 	filter: alpha(opacity=60); /* For IE8 and earlier */
 }
+
+.next {
+	width: auto;
+}
+
+.table.dataTable {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+}
+
+.table.dataTable thead th {
+	text-align: center;
+	vertical-align: middle;
+	background-color: #d2d6de !important;
+}
+
+.table.dataTable tbody td {
+	padding: 10px;
+}
+
+table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:after {
+    bottom: 30%;
+}

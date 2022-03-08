@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') || exit('No direct script access allowed'); ?>
 
-<?php defined('THEME_VERSION') or define('THEME_VERSION', 'v4.5') ?>
+<?php defined('THEME_VERSION') or define('THEME_VERSION', 'v22.04') ?>
 <?php $desa_title =  ucwords($this->setting->sebutan_desa) . ' '. $desa['nama_desa'] . ' '. ucwords($this->setting->sebutan_kecamatan) . ' '. $desa['nama_kecamatan'] . ' '. ucwords($this->setting->sebutan_kabupaten) . ' '. $desa['nama_kabupaten']; ?>
 
 <meta http-equiv="encoding" content="utf-8">
@@ -23,21 +23,20 @@
 <?php endif; ?>
 </title>
 
-<?php	$favicon = LOKASI_LOGO_DESA . 'favicon.ico'; ?>
-<link rel="shortcut icon" href="<?= base_url(is_file($favicon) ? $favicon : 'favicon.ico') ?>"/>
+<link rel="shortcut icon" href="<?= favico_desa() ?>"/>
 <link rel="stylesheet" href="<?= base_url("$this->theme_folder/$this->theme/assets/css/bootstrap.min.css"); ?>">
 <link rel="stylesheet" href="<?= base_url("$this->theme_folder/$this->theme/assets/css/font-awesome.min.css"); ?>">
 <link rel="stylesheet" href="<?= base_url("$this->theme_folder/$this->theme/assets/css/animate.css"); ?>">
 <link rel="stylesheet" href="<?= base_url("$this->theme_folder/$this->theme/assets/css/slick.css"); ?>">
 <link rel="stylesheet" href="<?= base_url("$this->theme_folder/$this->theme/assets/css/theme.min.css"); ?>">
 <link rel="stylesheet" href="<?= base_url("$this->theme_folder/$this->theme/assets/css/style.min.css"); ?>">
-<link rel="stylesheet" href="<?= base_url("$this->theme_folder/$this->theme/assets/css/custom.css"); ?>">
 <link rel='stylesheet' href="<?= base_url('assets/css/font-awesome.min.css'); ?>"/>
 <link rel="stylesheet" href="<?= base_url('assets/css/leaflet.css'); ?>"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
 <link rel="stylesheet" href="<?= base_url('assets/css/mapbox-gl.css'); ?>"/>
 <link rel="stylesheet" href="<?= base_url('assets/css/peta.css'); ?>">
 <link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/dataTables.bootstrap.min.css'); ?>">
+<link rel="stylesheet" href="<?= base_url("$this->theme_folder/$this->theme/assets/css/custom.css"); ?>">
 
 <?php if(isset($single_artikel)): ?>
 	<meta property="og:title" content="<?= htmlspecialchars($single_artikel["judul"]); ?>"/>
@@ -104,7 +103,7 @@
 			minutes = "0" + minutes;
 		if (seconds <= 9)
 			seconds = "0" + seconds;
-		document.getElementById("jam").innerHTML = "<B>"+days[day]+", "+daym+" "+months[month]+" "+year+"</B><br>"+hours+" : "+minutes+" : "+seconds;
+		$('#jam').html("<B>"+days[day]+", "+daym+" "+months[month]+" "+year+"</B><br>"+hours+" : "+minutes+" : "+seconds);
 		setTimeout("renderDate()",1000)
 	}
 </script>
