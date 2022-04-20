@@ -34,15 +34,15 @@
     <br>
     <div class="row">
       <?php if ($pemerintah): ?>
-        <?php foreach ($pemerintah as $value): ?>
+        <?php foreach ($pemerintah as $data): ?>
           <div class="col-sm-3 pamong">
             <div class="card text-center">
-              <img width="auto" class="rounded-circle image" src="<?= AmbilFoto($value->foto, '', $value->penduduk->sex ?? $value->pamong_sex) ?>" alt="Foto <? $value->penduduk->nama ?? $value->pamong_nama ?>"/>
+              <img width="auto" class="rounded-circle image" src="<?= AmbilFoto($data['foto'], '', $data['id_sex']) ?>" alt="Foto <? $data['nama'] ?>"/>
               <hr class="line">
               <b>
-                <?= $value->penduduk->nama ?? $value->pamong_nama ?><br>
-                <?= $value->jabatan ?><br>
-                <?php if ($this->setting->tampilkan_kehadiran && $value->kehadiranpamong->status_kehadiran == 'hadir') : ?>
+                <?= $data['nama'] ?><br>
+                <?= $data['jabatan'] ?><br>
+                <?php if ($this->setting->tampilkan_kehadiran && $data['status_kehadiran'] == 'hadir') : ?>
                   <span class='label label-success'>Hadir</span>
                 <?php else: ?>
                   <br>
