@@ -243,122 +243,122 @@
           $("#grafik-container").append(
               "<div class='graph-sub' id='graph-sub-"+ idx +"'>"+ subData['nama'] + "</div><div id='graph-"+ idx +"' class='graph-not-available'>Data tidak tersedia.</div>");
         }else{
-          var persentase = parseInt(subData['realisasi']) / (parseInt(subData['realisasi']) + parseInt(subData['anggaran'])) * 100;
-          if(isNaN(persentase)){
-            persentase = 0;
-          }
-          persentase = Math.round(persentase);
-          $("#grafik-container").append(
-              "<div class='graph-sub' id='graph-sub-"+ idx +"'>"+ subData['nama'] + "</div><div id='graph-"+ idx +"' class='graph'></div>");
-          Highcharts.chart("graph-"+ idx, {
-              chart: {
-                type: 'bar',
-                margin: 0,
-                height: 20,
-                backgroundColor: "rgba(0,0,0,0)",
-                spacingBottom: 0,
-              },
+          if (!isNaN(subData['anggaran'])){
+            var persentase = parseInt(subData['persen']);
+            console.log(subData);
+            persentase = Math.round(persentase);
+            $("#grafik-container").append(
+                "<div class='graph-sub' id='graph-sub-"+ idx +"'>"+ subData['nama'] + "</div><div id='graph-"+ idx +"' class='graph'></div>");
+            Highcharts.chart("graph-"+ idx, {
+                chart: {
+                  type: 'bar',
+                  margin: 0,
+                  height: 20,
+                  backgroundColor: "rgba(0,0,0,0)",
+                  spacingBottom: 0,
+                },
 
-              title: {
-                text: ''
-              },
+                title: {
+                  text: ''
+                },
 
-              subtitle: {
-                y: -2,
-                style: {"color" : "#000"},
-                text: '',
-              },
+                subtitle: {
+                  y: -2,
+                  style: {"color" : "#000"},
+                  text: '',
+                },
 
-              xAxis: {
-                visible: false,
-                categories: [''],
-              },
+                xAxis: {
+                  visible: false,
+                  categories: [''],
+                },
 
-              tooltip: {
-                valueSuffix: '',
-                backgroundColor: "#fff",
-                hideDelay: 0,
-                shape: "square",
-                outside: true,
-              },
+                tooltip: {
+                  valueSuffix: '',
+                  backgroundColor: "#fff",
+                  hideDelay: 0,
+                  shape: "square",
+                  outside: true,
+                },
 
-              plotOptions: {
-                bar: {
-                  dataLabels: {
-                    enabled: true
+                plotOptions: {
+                  bar: {
+                    dataLabels: {
+                      enabled: true
+                    },
+                  },
+
+                  series: {
+                    pointPadding: 0,
+                    groupPadding: 0,
+                    dataLabels: {
+                      align: 'right',
+                      inside: true,
+                      shadow: false,
+                      color: '#000',
+                    },
+                    grouping: false,
                   },
                 },
 
-                series: {
-                  pointPadding: 0,
-                  groupPadding: 0,
-                  dataLabels: {
-                    align: 'right',
-                    inside: true,
-                    shadow: false,
-                    color: '#000',
-                  },
-                  grouping: false,
+                credits: {
+                  enabled: false
                 },
-              },
 
-              credits: {
-                enabled: false
-              },
+                yAxis: {
+                  visible: false
+                },
 
-              yAxis: {
-                visible: false
-              },
+                exporting: {
+                  enabled: false
+                },
 
-              exporting: {
-                enabled: false
-              },
+                legend: {
+                  enabled: false
+                },
 
-              legend: {
-                enabled: false
-              },
-
-              series: [{
-                name: 'Anggaran',
-                color: '#34b4eb',
-                data: [parseInt(subData['anggaran'])],
-                dataLabels: {
-                  formatter: function(){
-                    if(parseInt(subData['realisasi']) <= parseInt(subData['anggaran'])){
-                      return "Rp. " + Highcharts.numberFormat(subData['anggaran'], '.', ',');
-                    }else{
-                      return "";
+                series: [{
+                  name: 'Anggaran',
+                  color: '#34b4eb',
+                  data: [parseInt(subData['anggaran'])],
+                  dataLabels: {
+                    formatter: function(){
+                      if(parseInt(subData['realisasi']) <= parseInt(subData['anggaran'])){
+                        return "Rp. " + Highcharts.numberFormat(subData['anggaran'], '.', ',');
+                      }else{
+                        return "";
+                      }
+                    },
+                    style: {"textOutline": "1px contrast"},
+                    },
+                    tooltip: {
+                      pointFormatter: function(){
+                        return 'Anggaran: <b>Rp. ' + Highcharts.numberFormat(this.y, '.', ',') + '</b>';
+                      }
                     }
-                  },
-                  style: {"textOutline": "1px contrast"},
+                }, {
+                  name: 'Realisasi',
+                  color: '#b4eb34',
+                  data: [parseInt(subData['realisasi'])],
+                  dataLabels: {
+                    formatter: function(){
+                      if(parseInt(subData['realisasi']) > parseInt(subData['anggaran'])){
+                        return "Rp. " + Highcharts.numberFormat(subData['realisasi'], '.', ',');
+                      }else{
+                        return "(" + persentase + "%)";
+                      }
+                    },
+                    style: {"textOutline": "1px contrast"},
                   },
                   tooltip: {
                     pointFormatter: function(){
-                      return 'Anggaran: <b>Rp. ' + Highcharts.numberFormat(this.y, '.', ',') + '</b>';
+                      return 'Realisasi: <b>Rp. ' + Highcharts.numberFormat(this.y, '.', ',') + '</b>';
                     }
                   }
-              }, {
-                name: 'Realisasi',
-                color: '#b4eb34',
-                data: [parseInt(subData['realisasi'])],
-                dataLabels: {
-                  formatter: function(){
-                    if(parseInt(subData['realisasi']) > parseInt(subData['anggaran'])){
-                      return "Rp. " + Highcharts.numberFormat(subData['realisasi'], '.', ',');
-                    }else{
-                      return "(" + persentase + "%)";
-                    }
-                  },
-                  style: {"textOutline": "1px contrast"},
-                },
-                tooltip: {
-                  pointFormatter: function(){
-                    return 'Realisasi: <b>Rp. ' + Highcharts.numberFormat(this.y, '.', ',') + '</b>';
-                  }
-                }
-              }]
-          });
-        }
+                }]
+            });
+          }
+          }
       }
     });
     $("p#grafik-tahun").text("Tahun " + year);
