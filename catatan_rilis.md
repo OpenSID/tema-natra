@@ -5,3 +5,4 @@ Catatan Rilis Tema Natra v22.05, sbb:
 3. [#2600](https://github.com/OpenSID/OpenSID/issues/2600) Tambahkan widget Jam Kerja.
 4. [#4552](https://github.com/OpenSID/OpenSID/issues/4552) Tambahkan data lembaga ke halaman web.
 5. [#712](https://github.com/OpenSID/OpenSID/issues/712) Tambahakan halaman pemerintah desa
+6. [#110](https://github.com/OpenSID/tema-natra/issues/110) Perbaiki lapak desa pilihan filter kategori produk tidak berfungsi.
