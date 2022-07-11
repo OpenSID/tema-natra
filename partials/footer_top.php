@@ -35,7 +35,7 @@
         </div>
 	    <div class="col-lg-4 col-md-4 col-sm-4">
 	        <div class="single_footer_top wow fadeInRight">
-             <?php if ($bsre != null && $bsre->value == 1): ?>
+            <?php if (!is_object(setting('logo_bsre')) && setting('logo_bsre') == 1): ?>
               <img src="<?=asset('assets/images/bsre.png?v', false); ?>" alt="Bsre" class="img-responsive" style="width: 185px;" />
             <?php endif ?>
 	            <?php foreach ($sosmed As $data): ?>
