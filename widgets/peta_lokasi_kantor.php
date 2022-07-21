@@ -107,7 +107,7 @@
 	var lokasi_kantor = L.map('map_canvas').setView(posisi, zoom);
 
 	//Menampilkan BaseLayers Peta
-	var baseLayers = getBaseLayers(lokasi_kantor, '<?= $this->setting->mapbox_key; ?>');
+	var baseLayers = getBaseLayers(lokasi_kantor, MAPBOX_KEY, JENIS_PETA);
 
 	L.control.layers(baseLayers, null, {position: 'topright', collapsed: true}).addTo(lokasi_kantor);
 

@@ -112,8 +112,6 @@
 	</div>
 </div>
 <script type="text/javascript">
-	var map_key = "<?= $this->setting->mapbox_key; ?>";
-
 	$(document).ready(function() {
 		$(document).on('shown.bs.modal','#map-modal', function(event) {
 			let link = $(event.relatedTarget);
@@ -132,7 +130,7 @@
 			$("#lng").val(link.data('lng'));
 
 			pelapak = L.map('map').setView(posisi, zoom);
-			getBaseLayers(pelapak, map_key);
+			getBaseLayers(pelapak, MAPBOX_KEY, JENIS_PETA);
 			pelapak.addLayer(new L.Marker(posisi, {icon:logo}));
 		});
 	});
