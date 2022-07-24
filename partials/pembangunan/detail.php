@@ -119,7 +119,7 @@
 			});
 
 			pembangunan = L.map('map').setView(posisi, zoom);
-			getBaseLayers(pembangunan, MAPBOX_KEY, JENIS_PETA);
+			getBaseLayers(pembangunan, "<?= setting('mapbox_key') ?>", "<?= setting('jenis_peta') ?>");
 			pembangunan.addLayer(new L.Marker(posisi, {icon:logo}));
 		});
 	</script>

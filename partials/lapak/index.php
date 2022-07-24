@@ -130,7 +130,7 @@
 			$("#lng").val(link.data('lng'));
 
 			pelapak = L.map('map').setView(posisi, zoom);
-			getBaseLayers(pelapak, MAPBOX_KEY, JENIS_PETA);
+			getBaseLayers(pelapak, "<?= setting('mapbox_key') ?>", "<?= setting('jenis_peta') ?>");
 			pelapak.addLayer(new L.Marker(posisi, {icon:logo}));
 		});
 	});
