@@ -10,8 +10,8 @@
             <?php endif; ?>
         </div>
         <?php $this->load->view("$folder_themes/layouts/slider"); ?>
-		<?php if ($this->setting->covid_data) $this->load->view("$folder_themes/partials/corona-widget"); ?>
-		<?php if ($this->setting->covid_desa) $this->load->view("$folder_themes/partials/corona-local"); ?>
+        <?php if ($this->setting->covid_data) $this->load->view("$folder_themes/partials/corona-widget"); ?>
+        <?php if ($this->setting->covid_desa) $this->load->view("$folder_themes/partials/corona-local"); ?>
         <?php if ($headline): ?>
         <?php $abstrak_headline = potong_teks($headline['isi'], 550) ?>
             <div class="single_category wow fadeInDown">
@@ -47,7 +47,10 @@
                 </div>
             </div>
         <?php endif; ?>
-	</div>
+    </div>
+
+    <?php $this->load->view("$folder_themes/partials/feed") ?>
+
     <?php $title = (!empty($judul_kategori))? $judul_kategori : "Artikel Terkini" ?>
     <?php if (is_array($title)): ?>
         <?php foreach ($title as $item): ?>
