@@ -33,11 +33,12 @@
   <div class="box-body">
     <br>
     <div class="row">
+      <?php $pemerintah = pemerintah_desa() ?>
       <?php if ($pemerintah): ?>
         <?php foreach ($pemerintah as $data): ?>
           <div class="col-sm-3 pamong">
             <div class="card text-center">
-              <img width="auto" class="rounded-circle image" src="<?= AmbilFoto($data['foto'], '', $data['id_sex']) ?>" alt="Foto <? $data['nama'] ?>"/>
+              <img width="auto" class="rounded-circle image" src="<?= AmbilFoto($data['foto'], 'besar', $data['id_sex'], true) ?>" alt="Foto <? $data['nama'] ?>"/>
               <hr class="line">
               <b>
                 <?= $data['nama'] ?><br>
