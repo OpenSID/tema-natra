@@ -1,6 +1,4 @@
-Catatan Rilis Tema Natra v22.09, sbb:
+Catatan Rilis Tema Natra v22.10, sbb:
 
-1. [#5232](https://github.com/OpenSID/OpenSID/issues/5232) Penambahan pengaturan default jenis peta yang digunakan.
-2. [#4835](https://github.com/OpenSID/OpenSID/issues/4835) Penambahan logo BSrE pada Footer.
-3. [#5482](https://github.com/OpenSID/OpenSID/issues/5482) Foto apartur desa tidak menggunakan NIK.
-4. [#5489](https://github.com/OpenSID/OpenSID/issues/5489) Penambahan halaman SDGS Desa.
+1. [#5544](https://github.com/OpenSID/OpenSID/issues/5544) Menambahkan paginasi di halaman peraturan_desa pada halaman depan.
+2. [#5515](https://github.com/OpenSID/OpenSID/issues/5515) Menambahkan pengaturan min dan max zoom pada peta.
