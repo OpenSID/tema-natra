@@ -1,4 +1,5 @@
-Catatan Rilis Tema Natra v22.10, sbb:
+Catatan Rilis Tema Natra v22.11, sbb:
 
-1. [#5544](https://github.com/OpenSID/OpenSID/issues/5544) Menambahkan paginasi di halaman peraturan_desa pada halaman depan.
-2. [#5515](https://github.com/OpenSID/OpenSID/issues/5515) Menambahkan pengaturan min dan max zoom pada peta.
+1. Tampilkan peserta bantuan sesuai pengaturan admin.
+2. Tambahkan status kehadiran lainnya.
+3. Sesuaikan halaman SDGS.
