@@ -1,5 +1,5 @@
-Catatan Rilis Tema Natra v22.11, sbb:
+Catatan Rilis Tema Natra v22.12, sbb:
 
-1. Tampilkan peserta bantuan sesuai pengaturan admin.
-2. Tambahkan status kehadiran lainnya.
-3. Sesuaikan halaman SDGS.
+1. Tampilkan desimal dua digit tidak dapat ditampilkan pada transparansi APBDesa.
+2. Penyesuaian informasi publik peraturan desa.
+3. Penyesuaian halaman pengaduan.
