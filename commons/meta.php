@@ -141,22 +141,15 @@
 </style>
 
 <script>
-	 let options = {
-	    
-	    callback : "log",
+	 let yall_option = {
 	    useLoading : true
 	}
-	var lazyload = new yall(options);
-
-	function log(a){
-	  console.log(`loaded image with src= ${a.src}.`);
-	}
+	var lazyload = new yall(yall_option);
 
 	window.addEventListener('DOMContentLoaded', (e) => {
 	  lazyload.run();
 	});
 </script>
-
 
 <!--[if lt IE 9]>
 <script src="<?= base_url("$this->theme_folder/$this->theme/assets/js/html5shiv.min.js") ?>"></script>
