@@ -24,12 +24,14 @@
 			<?php if ($widget["jenis_widget"] == 1): ?>
 				<?php $this->load->view("{$folder_themes}/widgets/{$widget['isi']}", $judul_widget) ?>
 			<?php elseif($widget['jenis_widget'] == 2) : ?>
-				<?php $this->load->view("../../{$widget['isi']}", $judul_widget) ?>
+				<div class="single_bottom_rightbar">
+					<?php $this->load->view("../../{$widget['isi']}", $judul_widget) ?>
+				</div>
 			<?php else : ?>
 				<div class="single_bottom_rightbar">
 					<h2><i class="fa fa-folder"></i>&ensp;<?= $judul_widget['judul_widget'] ?></h2>
 					<div class="box-body">
-						<?= html_entity_decode($widget['isi']) ?>
+						<?= htmlspecialchars_decode(html_entity_decode($widget['isi']), ENT_QUOTES) ?>
 					</div>
 				</div>
 			<?php endif ?>

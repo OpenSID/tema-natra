@@ -440,8 +440,9 @@
 											<div class="col-md-12">
 												<p class="text-muted">Pengaduan oleh <?= $value['nama']; ?> | <?= $value['created_at'] ?></p>
 												<p><?= $value['isi'] ?></p>
-												<?php if ($value['foto']) : ?>
-													<img class="img-responsive" src="<?= base_url(LOKASI_PENGADUAN . $value['foto']); ?>">
+												<?php $file_foto = LOKASI_PENGADUAN . $value['foto']; ?>
+												<?php if (file_exists(FCPATH . $file_foto)) : ?>
+													<img class="img-responsive" src="<?= to_base64($file_foto) ?>">
 												<?php endif; ?>
 											</div>
 										</div>
@@ -528,13 +529,13 @@
 								<tr class="captcha">
 									<td>&nbsp;</td>
 									<td>
-										<a href="#" id="b-captcha" onclick="document.getElementById('captcha').src = '<?= base_url() . 'securimage/securimage_show.php?' ?>' + Math.random(); return false" style="color: #000000;">
-											<img id="captcha" src="<?= base_url('securimage/securimage_show'); ?>" alt="CAPTCHA Image" />
+										<a href="#" id="b-captcha" onclick="document.getElementById('captcha').src = '<?= site_url('captcha') ?>'; return false" style="color: #000000;">
+											<img id="captcha" src="<?= site_url('captcha') ?>" alt="CAPTCHA Image" />
 										</a>
 									</td>
 									<td>&nbsp;&nbsp;&nbsp;</td>
 									<td>
-										<input type="text" name="captcha_code" class="form-control" maxlength="6" placeholder="Isikan jawaban" required />
+										<input type="text" name="captcha_code" class="form-control" maxlength="6" placeholder="Masukkan kode diatas" required />
 									</td>
 								</tr>
 							</table>

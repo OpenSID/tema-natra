@@ -1,5 +1,5 @@
-Catatan Rilis Tema Natra v22.12, sbb:
+Catatan Rilis Tema Natra v2308.0.3, sbb:
 
-1. Tampilkan desimal dua digit tidak dapat ditampilkan pada transparansi APBDesa.
-2. Penyesuaian informasi publik peraturan desa.
-3. Penyesuaian halaman pengaduan.
+1. Penyesuaian sebutan pemerintah desa.
+2. Penyesuaian captcha komentar artikel dan pengaduan.
+3. Sesuaikan widget dinamis.
