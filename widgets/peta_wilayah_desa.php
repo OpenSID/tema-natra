@@ -1,9 +1,9 @@
-<!-- widget Peta Wilayah Desa -->
+<?php defined('BASEPATH') || exit('No direct script access allowed'); ?>
+
 <div class="">
 	<div class="single_bottom_rightbar">
 		<h2>
-			<i class="fa fa-map-marker"></i>
-			<?="Wilayah ".ucwords($this->setting->sebutan_desa)?>
+			<i class="fa fa-map-marker"></i>&ensp;<?= $judul_widget ?>
 		</h2>
 	</div>
 	<div class="single_bottom_rightbar">
@@ -21,6 +21,13 @@
 		var posisi = [-1.0546279422758742,116.71875000000001];
 		var zoom = 10;
 	<?php endif; ?>
+
+	
+	var options = {
+		maxZoom: <?= setting('max_zoom_peta') ?>,
+		minZoom: <?= setting('min_zoom_peta') ?>,
+	};
+
 	//Style polygon
 	var style_polygon = {
 		stroke: true,
@@ -30,10 +37,10 @@
 		fillColor: '#8888dd',
 		fillOpacity: 0.5
 	};
-	var wilayah_desa = L.map('map_wilayah').setView(posisi, zoom);
+	var wilayah_desa = L.map('map_wilayah', options).setView(posisi, zoom);
 
 	//Menampilkan BaseLayers Peta
-	var baseLayers = getBaseLayers(wilayah_desa, '<?= $this->setting->mapbox_key; ?>');
+	var baseLayers = getBaseLayers(wilayah_desa, "<?= setting('mapbox_key') ?>", "<?= setting('jenis_peta') ?>");
 
 	L.control.layers(baseLayers, null, {position: 'topright', collapsed: true}).addTo(wilayah_desa);
 

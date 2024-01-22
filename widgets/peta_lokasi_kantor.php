@@ -1,3 +1,5 @@
+<?php defined('BASEPATH') || exit('No direct script access allowed'); ?>
+
 <style type="text/css">
 	button.btn {
 		margin-left: 0px;
@@ -33,7 +35,7 @@
 
 <!-- widget Peta Lokasi Kantor Desa -->
 <div class="single_bottom_rightbar">
-	<h2><i class="fa fa-map-marker"></i> <?="Lokasi Kantor ".ucwords($this->setting->sebutan_desa)?></h2>
+	<h2><i class="fa fa-map-marker"></i>&ensp;<?= $judul_widget ?></h2>
 		<div class="box-body">
 			<div id="map_canvas" style="height:200px;"></div>
 			<button class="btn btn-success btn-block"><a href="https://www.openstreetmap.org/#map=15/<?=$data_config['lat']."/".$data_config['lng']?>" style="color:#fff;" rel="noopener noreferrer" target="_blank">Buka Peta</a></button>
@@ -102,10 +104,15 @@
 		var zoom = 10;
 	<?php endif; ?>
 
-	var lokasi_kantor = L.map('map_canvas').setView(posisi, zoom);
+	var options = {
+		maxZoom: <?= setting('max_zoom_peta') ?>,
+		minZoom: <?= setting('min_zoom_peta') ?>,
+	};
+
+	var lokasi_kantor = L.map('map_canvas', options).setView(posisi, zoom);
 
 	//Menampilkan BaseLayers Peta
-	var baseLayers = getBaseLayers(lokasi_kantor, '<?= $this->setting->mapbox_key; ?>');
+	var baseLayers = getBaseLayers(lokasi_kantor, "<?= setting('mapbox_key') ?>", "<?= setting('jenis_peta') ?>");
 
 	L.control.layers(baseLayers, null, {position: 'topright', collapsed: true}).addTo(lokasi_kantor);
 

@@ -1,4 +1,5 @@
-<!-- widget Sinergi Program-->
+<?php defined('BASEPATH') || exit('No direct script access allowed'); ?>
+
 <!-- TODO: Pindahkan ke external css -->
 <style>
 	#sinergi_program
@@ -35,7 +36,7 @@
 	}
 </style>
 <div class="single_bottom_rightbar">
-	<h2 class="box-title"><i class="fa fa-external-link"></i> Sinergi Program</h2>
+	<h2 class="box-title"><i class="fa fa-external-link"></i>&ensp;<?= $judul_widget ?></h2>
 	<div id="sinergi_program" class="box-body">
 		<table>
 			<?php foreach($sinergi_program as $key => $program) :
@@ -48,7 +49,7 @@
 						<?php $width = 100/count($baris_program)-count($baris_program)?>
 						<?php foreach($baris_program as $key => $program) : ?>
 							<span style="display: inline-block; width: <?= $width.'%'?>">
-								<a href="<?= $program['tautan']?>" rel="noopener noreferrer" target="_blank"><img src="<?= base_url().LOKASI_GAMBAR_WIDGET.$program['gambar']?>" style="float:left; margin:0px 0px 0px 0px;" alt="<?= $program['judul']?>" /></a>
+								<a href="<?= $program['tautan']?>" rel="noopener noreferrer" target="_blank"><img src="<?= base_url(LOKASI_GAMBAR_WIDGET . $program['gambar']) ?>" style="float:left; margin:0px 0px 0px 0px;" alt="<?= $program['judul']?>" /></a>
 							</span>
 						<?php endforeach; ?>
 					</td>
