@@ -157,7 +157,6 @@
     {
         min-height:275px;
     }
-    }
 </style>
 <div class="box-body">
     <div class="single_page_area">
