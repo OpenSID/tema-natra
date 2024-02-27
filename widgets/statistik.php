@@ -28,11 +28,11 @@
 						xAxis: {
 							categories:
 							[
-								<?php foreach($stat_widget as $data): ?>
-									<?php if ($data['jumlah'] != "-" && $data['nama']!= "JUMLAH" && $data['nama'] != "BELUM MENGISI"): ?>
-										['<?= $data['jumlah']?> <br> <?= $data['nama']?>'],
-									<?php endif; ?>
-								<?php endforeach; ?>
+							<?php foreach($stat_widget as $data): ?>
+								<?php if ($data['jumlah'] != "-" AND $data['nama']!= "JUMLAH" AND $data['nama']!= "BELUM MENGISI"): ?>
+									['<?= $data['jumlah']?> <br> <?= $data['nama']?>'],
+								<?php endif; ?>
+							<?php endforeach; ?>
 							]
 						},
 						legend: {
@@ -50,13 +50,12 @@
 						series: [{
 							type: 'column',
 							name: 'Populasi',
-							data: 
-							[
-								<?php foreach($stat_widget as $data): ?>
-									<?php if ($data['jumlah'] != "-" && $data['nama']!= "JUMLAH" && $data['nama'] != "BELUM MENGISI"): ?>
-										['<?= $data['jumlah']?>,<?= $data['nama']?>'],
-									<?php endif; ?>
-								<?php endforeach; ?>
+							data: [
+							<?php foreach ($stat_widget as $data): ?>
+								<?php if ($data['jumlah'] != "-" AND $data['nama']!= "JUMLAH" AND $data['nama']!= "BELUM MENGISI"): ?>
+									['<?= $data['nama']?>',<?= $data['jumlah']?>],
+								<?php endif; ?>
+							<?php endforeach; ?>
 							]
 						}]
 					});
