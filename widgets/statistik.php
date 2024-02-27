@@ -30,7 +30,7 @@
 							[
 								<?php foreach($stat_widget as $data): ?>
 									<?php if ($data['jumlah'] != "-" && $data['nama']!= "JUMLAH" && $data['nama'] != "BELUM MENGISI"): ?>
-										['<?= $data['jumlah']?>,<?= $data['nama']?>'],
+										['<?= $data['jumlah']?> <br> <?= $data['nama']?>'],
 									<?php endif; ?>
 								<?php endforeach; ?>
 							]
