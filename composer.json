@@ -13,5 +13,10 @@
             "name": "Ariandi Ryan Kahfi",
             "email": "ariandi@mail.com"
         }
-    ]
+    ],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2404.x-dev"
+        }
+    }
 }

@@ -1,4 +1,4 @@
-Catatan Rilis Tema Natra v2403.0.0 :
+Catatan Rilis v2403.0.1 :
 
 BUG :
-1. Perbaikan detail data pada halaman statistik.
+1. 
