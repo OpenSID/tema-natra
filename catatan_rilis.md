@@ -1,4 +1,9 @@
-Catatan Rilis v2405.0.0 :
+Catatan Rilis v2406.0.0 :
+
+### FITUR : 
+1. Halaman inventaris
+2. 
 
 ### TEKNIS :
-1. Penyesuaian icon lokasi pelapak sesuai pengaturan.
+1. Penyesuaian csrf token.
+2. Penyesuaian keterangan pada pengaturan tema.
