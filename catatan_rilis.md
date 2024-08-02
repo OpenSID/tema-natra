@@ -1,10 +1,12 @@
-Catatan Rilis v2407.0.0 :
+Catatan Rilis v2408.0.0 :
 
 ### FITUR : 
-1. Penambahan halaman peta
-2. Penambahan halaman sotk
+1. Penambahan pengaturan tema, unggah gambar untuk foto tidak tersedia.
+
+### BUG : 
+1. Perbaikan menampilkan data galeri.
+2. Perbaikan regenerate captcha.
 
 
-### TEKNIS :
-1. Penyesuaian folder asset dan gunakan helper theme_asset.
-2. Penyesuaian sinergi program.
+### TEKNIS : 
+1. Penyesuaian logo dan sk pendirian pada halaman web kelompok/lembaga.
