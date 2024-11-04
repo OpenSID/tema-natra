@@ -1,12 +1,10 @@
-Catatan Rilis v2410.0.0 :
+Catatan Rilis v2411.0.0 :
 
 ### FITUR : 
-1. Penambahan halaman stunting. (premium)
-2. Penambahan filter bantuan berdasarkan tahun. (premium)
+1. Penambahan fungsi cetak dan unduh pada halaman statistik dan bantuan.
+2. Penambahan fungsi cetak dan unduh pada halaman statistik kesehatan > stunting.
+3. Penambahan fungsi menu tipe embed.
 
-#### BUG : 
-1. Perbaikan tampilan halaman artikel.
-1. Perbaikan tampilan halaman peta.
-
-### TEKNIS :
-1. Penyesuaian sebutan kepala dusun. (premium)
+### BUG : 
+1. Perbaikan pengurutan data pada informasi publik.
+2. Perbaikan menu agar selalu posisi atas.
