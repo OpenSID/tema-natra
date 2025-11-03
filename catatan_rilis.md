@@ -1,3 +1,3 @@
-Catatan Rilis v2510.0.0 :
+Catatan Rilis v2511.0.0 :
 
 ### TEKNIS :
