@@ -1,4 +1,4 @@
-Catatan Rilis v2409.0.0 :
+Catatan Rilis v2602.0.0 :
 
 ### TEKNIS :
 1. [#10724](https://github.com/OpenSID/OpenSID/issues/10724) Perbaikan tombol ganti tampilan captcha pada komentar artikel.
