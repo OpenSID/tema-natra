@@ -1,0 +1,4 @@
+# Jangan sertakan file pipeline rilis ke dalam paket ZIP (git archive).
+/.github          export-ignore
+/.gitattributes   export-ignore
+/build-release.sh export-ignore
