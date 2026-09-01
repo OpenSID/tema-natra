@@ -3,5 +3,6 @@
     "description": "Tema resmi OpenSID Natra (RETIRED - tidak lagi dikembangkan aktif, tidak dijamin kompatibel dengan rilis OpenSID terbaru)",
     "thumbnail": "https://raw.githubusercontent.com/OpenSID/tema-natra/v2603.0.1/assets/thumbnail/preview-1.jpg",
     "price": "Rp. 0",
-    "version": "2604.0.0"
+    "version": "2604.0.0",
+    "package": "tema-natra"
 }
